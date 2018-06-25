@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.*;
 import com.tns.techfly.vuelos.model.Vuelo;
 import com.tns.techfly.vuelos.service.VueloService;
 
-@RequestMapping("/vuelo")
+@RequestMapping("/pru")
 @RestController
 
 public class VueloController {
 	@Autowired
 	private VueloService vueloService;
 	
-	@GetMapping("/vuelo")
+	@GetMapping("/Allvuelo")
 	public List<Vuelo> getAllVuelos(){
 		return vueloService.getAllVuelos();
 	}
@@ -34,7 +34,7 @@ public class VueloController {
 		return vueloService.getVueloById(idvuelo);
 	}
 	
-	@PutMapping("/notes/{idvuelo}")
+	@PutMapping("/vuelo/{idvuelo}")
 	public Vuelo updateVuelo(@PathVariable(value="idvuelo") long idvuelo, @Valid @RequestBody Vuelo vueloDetails){
 		return vueloService.updateVuelo(idvuelo, vueloDetails);
 	}

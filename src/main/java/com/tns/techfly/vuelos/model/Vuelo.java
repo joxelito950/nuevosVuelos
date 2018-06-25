@@ -1,7 +1,6 @@
 package com.tns.techfly.vuelos.model;
 
 
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 
 import Utils.Utils;
@@ -10,22 +9,44 @@ import java.util.Date;
 
 @Entity
 @Table(name = "vuelo")
-@EntityListeners(AuditingEntityListener.class)
 
 public class Vuelo {
 	@Id
-	private String idVuelo;
+	private long idVuelo;
 	
-	@Column
+	@Column(name="fechasalida")
 	private Date fechaSalida;
 
-	@Column
+	@Column(name="costo")
 	private float costo;
 	
-	public Vuelo(String id,Date fecha) {
+	public Vuelo() {
+		super();
+	}
+
+	public Vuelo(long id,Date fecha) {
 		this.idVuelo=id;
 		this.fechaSalida=fecha;
 		this.costo=Utils.calcularCosto(fecha);
 
 	}
+
+	public long getIdVuelo() {
+		return idVuelo;
+	}
+
+	public Date getFechaSalida() {
+		return fechaSalida;
+	}
+
+	public float getCosto() {
+		return costo;
+	}
+
+	public void nuevaFechaSalida(Date fechaSalida2) {
+		this.fechaSalida=fechaSalida2;
+		costo=Utils.calcularCosto(fechaSalida2);
+	}
+	
+	
 }
