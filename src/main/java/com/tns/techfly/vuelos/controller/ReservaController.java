@@ -11,13 +11,14 @@ import com.tns.techfly.vuelos.model.Reserva;
 import com.tns.techfly.vuelos.service.ReservaService;
 
 
-@RequestMapping("/controller")
+@RequestMapping("/reserva")
 @RestController
 public class ReservaController {
+	
 	@Autowired
 	private ReservaService reservaService;
 	
-	@GetMapping("/allreserva")
+	@GetMapping("/Allreserva")
 	public List<Reserva> getAllReservas(){
 		return reservaService.getAll();
 	}

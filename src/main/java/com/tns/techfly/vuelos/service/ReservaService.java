@@ -6,12 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tns.techfly.vuelos.model.Persona;
 import com.tns.techfly.vuelos.model.Reserva;
 import com.tns.techfly.vuelos.repository.ReservaRepository;
 
 @Service
 public class ReservaService {
+	
+	
 	@Autowired
 	private ReservaRepository reservaRepository;
 	
