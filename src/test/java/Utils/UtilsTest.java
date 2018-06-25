@@ -13,14 +13,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UtilsTest {
 	
 	@Test
-	public void calculaCostoMañana() {
+	public void calculaCostoMañanaSemana() {
 		Date mañana= obtenerFecha(9);
-
+		
 	}
 	
 	public Date obtenerFecha(int hora) {
 		Calendar fecha=Calendar.getInstance();
 		fecha.set(Calendar.HOUR_OF_DAY, hora);
+		fecha.set(Calendar.DAY_OF_WEEK, 0);
 		Date fechaRetorna = new Date();
 		fechaRetorna=fecha.getTime();
 		return fechaRetorna;
