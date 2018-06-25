@@ -1,9 +1,20 @@
 package com.tns.techfly.vuelos.model;
 
-public class Reserva {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="reserva")
+public class Reserva {
+	@Id
 	private long idReserva;
+	
+	@Column(name="cedula")
 	private int cedula;
+	
+	@Column(name="idvuelo")
 	private int idvuelo;
 
 	public Reserva() {
