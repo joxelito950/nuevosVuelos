@@ -11,6 +11,6 @@ public class Vuelo {
 	public Vuelo(int id,Date fecha) {
 		idVuelo=id;
 		fechaSalida=fecha;
-		costo=
+		//costo=
 	}
 }
