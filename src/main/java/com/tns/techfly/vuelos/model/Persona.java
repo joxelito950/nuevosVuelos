@@ -22,7 +22,6 @@ public class Persona {
 	private int celular;
 	public Persona() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Persona(int cedula, String nombre, String apellido, int edad, int celular) {
 		super();
