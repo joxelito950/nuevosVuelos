@@ -2,6 +2,8 @@ package com.tns.techfly.vuelos.model;
 
 import java.util.Date;
 
+import Utils.Utils;
+
 public class Vuelo {
 	private int idVuelo;
 	private Date fechaSalida;
@@ -11,6 +13,8 @@ public class Vuelo {
 	public Vuelo(int id,Date fecha) {
 		idVuelo=id;
 		fechaSalida=fecha;
-		//costo=
+
+		costo=
+
 	}
 }
