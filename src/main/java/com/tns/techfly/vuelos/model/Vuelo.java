@@ -26,5 +26,6 @@ public class Vuelo {
 		this.idVuelo=id;
 		this.fechaSalida=fecha;
 		this.costo=Utils.calcularCosto(fecha);
+
 	}
 }
