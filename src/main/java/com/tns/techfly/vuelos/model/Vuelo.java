@@ -3,6 +3,8 @@ package com.tns.techfly.vuelos.model;
 
 import javax.persistence.*;
 
+import com.tns.techfly.vuelos.UtilBusiness.Business;
+
 import Utils.Utils;
 import java.util.Date;
 
@@ -27,7 +29,7 @@ public class Vuelo {
 	public Vuelo(long id,Date fecha) {
 		this.idVuelo=id;
 		this.fechaSalida=fecha;
-		this.costo=Utils.calcularCosto(fecha);
+		this.costo=Business.calcularCosto(fecha);
 
 	}
 
@@ -45,7 +47,7 @@ public class Vuelo {
 
 	public void nuevaFechaSalida(Date fechaSalida2) {
 		this.fechaSalida=fechaSalida2;
-		costo=Utils.calcularCosto(fechaSalida2);
+		costo=Business.calcularCosto(fechaSalida2);
 	}
 	
 	
