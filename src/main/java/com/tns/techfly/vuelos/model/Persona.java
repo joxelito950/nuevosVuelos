@@ -1,5 +1,8 @@
 package com.tns.techfly.vuelos.model;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,8 +19,8 @@ public class Persona {
 	private String nombre;
 	@Column(name = "apellido")
 	private String apellido;
-	@Column(name = "edad")
-	private int edad;
+	@Column(name = "fechanacimiento")
+	private Date fechaNacimiento;
 	@Column(name = "celular")
 	private int celular;
 
@@ -25,12 +28,12 @@ public class Persona {
 		super();
 	}
 
-	public Persona(int cedula, String nombre, String apellido, int edad, int celular) {
+	public Persona(int cedula, String nombre, String apellido, Date fechaNacimiento, int celular) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.edad = edad;
+		this.fechaNacimiento = fechaNacimiento;
 		this.celular = celular;
 	}
 
@@ -50,12 +53,19 @@ public class Persona {
 		this.apellido = apellido;
 	}
 
-	public int getEdad() {
-		return edad;
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
 	}
-
-	public void setEdad(int edad) {
-		this.edad = edad;
+	
+	public int getEdad() {
+		Calendar añoActual = Calendar.getInstance();
+		Calendar añoNacimiento = Calendar.getInstance();
+		añoNacimiento.setTime(fechaNacimiento);
+		return añoActual.get(Calendar.YEAR)-añoNacimiento.get(Calendar.YEAR);
+	}
+	
+	public void setEdad(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public int getCelular() {
