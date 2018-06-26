@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class Utils {
 
+	public static int MAYORIA_EDAD = 18;
 	
 	
 	public static Date obtenerFecha(int diaSemana,int hora) {
@@ -14,6 +15,13 @@ public class Utils {
 		Date fechaRetorna = new Date();
 		fechaRetorna= fecha.getTime();
 		return fechaRetorna;
+	}
+
+
+	public static boolean esMayorEdad(int edad) {
+		if(edad < MAYORIA_EDAD)
+			return false;
+		return true;
 	}
 	
 	
