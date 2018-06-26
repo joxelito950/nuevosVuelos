@@ -13,6 +13,7 @@ public class Business {
 	public static float COST_WEEK_LATE = 40000;
 	public static float COST_WEEKEND_MORNING = 50000;
 	public static float COST_WEEKEND_LATE = 60000;
+	public static int MAYORIA_EDAD = 18;
 	public static float precioVuelo;
 
 	public static float calcularCosto(Date fecha) {
@@ -63,4 +64,16 @@ public class Business {
 		}
 	}
 
+	public static Date obtenerFecha(int diaSemana,int hora) {
+		Calendar fecha=Calendar.getInstance();
+		fecha.set(Calendar.HOUR_OF_DAY, hora);
+		fecha.set(Calendar.DAY_OF_WEEK, diaSemana);
+		Date fechaRetorna = new Date();
+		fechaRetorna= fecha.getTime();
+		return fechaRetorna;
+	}
+
+	public static boolean esMayorEdad(int edad) {
+		return MAYORIA_EDAD<=edad;
+	}
 }
